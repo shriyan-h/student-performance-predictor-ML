@@ -4,7 +4,7 @@ A machine learning web app that predicts a student's final grade
 based on their academic profile.
 
 ## 🔗 Live Demo
-[Click here to try the app](<your-streamlit-link-after-deploy>)
+[Click here to try the app](<https://student-performance-predictor-ml-2dzqw9pyeijehovxxelose.streamlit.app/>)
 
 ## 📊 Model Performance
 - **R2 Score:** 0.863
