@@ -54,7 +54,7 @@ if st.button('🔮 Predict Final Grade', use_container_width=True):
     })
 
     prediction = model.predict(input_data)[0]
-    prediction = max(0, min(20, prediction))
+    prediction = max(0.0, min(20, prediction))
 
     st.divider()
     col3, col4, col5 = st.columns(3)
