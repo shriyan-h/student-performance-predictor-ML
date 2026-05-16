@@ -60,7 +60,7 @@ if st.button('🔮 Predict Final Grade', use_container_width=True):
     col3, col4, col5 = st.columns(3)
 
     with col3:
-        grade_display = f'{prediction:.1f} / 20'
+        grade_display = f'{float(prediction):.1f} / 20'
         st.metric('Predicted Grade', grade_display)
     with col4:
         percentage = (prediction / 20) * 100
