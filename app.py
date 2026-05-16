@@ -53,17 +53,18 @@ if st.button('🔮 Predict Final Grade', use_container_width=True):
         'G2': [G2]
     })
 
+    # Perform prediction and ensure it is a float
     prediction = float(model.predict(input_data)[0])
     prediction = max(0.0, min(20.0, prediction))
-    percentage = round((prediction / 20) * 100, 1)
+    percentage = (prediction / 20) * 100
 
     st.divider()
     col3, col4, col5 = st.columns(3)
 
     with col3:
-        st.metric('Predicted Grade', str(round(prediction, 1)) + ' / 20')
+        st.metric('Predicted Grade', f'{prediction:.1f} / 20')
     with col4:
-        st.metric('Percentage', str(percentage) + '%')
+        st.metric('Percentage', f'{percentage:.1f}%')
     with col5:
         if prediction >= 15:
             st.metric('Status', '🌟 Excellent')
@@ -81,3 +82,6 @@ if st.button('🔮 Predict Final Grade', use_container_width=True):
         st.info('Satisfactory performance predicted')
     else:
         st.warning('This student may need additional support')
+
+st.divider()
+st.caption('Model trained on Student Performance Dataset | R2 Score: 0.863 | RMSE: 1.15')
