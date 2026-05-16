@@ -37,7 +37,7 @@ if st.button('Predict Final Grade', use_container_width=True):
         'G2': [G2]
     })
 
-    prediction = float(model.predict(input_data)[0])
+    prediction = float(model.predict(input_data).item())
     prediction = max(0.0, min(20.0, prediction))
     percentage = round((prediction / 20) * 100, 1)
 
